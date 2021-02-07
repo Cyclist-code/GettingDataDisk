@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingDataDisk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="620" Width="460" WindowStartupLocation="CenterScreen">
-    <Grid>
+        x:Name="MainWin"
+        Title="Getting Data Disk" Height="630" Width="470" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize">
+
+    <StackPanel Orientation="Vertical">
+
+        <Grid Height="30" Background="#FF03172B">
+            <TextBlock Text="Getting Data Disk" HorizontalAlignment="Center" FontSize="18" 
+                       Foreground="White" FontWeight="Bold" Margin="0,2,0,0"/>
+            <Button Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0" BorderThickness="0">
+                <Image/>
+                <Button.ToolTip>
+                    <ToolTip Placement="Mouse">
+                        Закрыть
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </Grid>
+
+        <Grid Background="#D4D4D4" Height="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+
+        </Grid>
         
-    </Grid>
+    </StackPanel>
 </Window>
