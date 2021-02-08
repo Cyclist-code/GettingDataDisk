@@ -11,11 +11,12 @@
 
     <StackPanel Orientation="Vertical">
 
-        <Grid Height="30" Background="#FF03172B">
+        <Grid Height="30" Background="#FF03172B" MouseLeftButtonDown="DragDropApp_MouseLeftButtonDown">
             <TextBlock Text="Getting Data Disk" HorizontalAlignment="Center" FontSize="18" 
                        Foreground="White" FontWeight="Bold" Margin="0,2,0,0"/>
-            <Button Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0" BorderThickness="0">
-                <Image/>
+            <Button x:Name="CloseBtn" Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0" 
+                    BorderThickness="0" Background="#FF03172B" Click="CloseBtn_Click">
+                <Image Source="Assets/close.png" Height="25" Width="25"/>
                 <Button.ToolTip>
                     <ToolTip Placement="Mouse">
                         Закрыть
@@ -26,17 +27,25 @@
 
         <Grid Background="#D4D4D4" Height="600">
             <Grid.RowDefinitions>
-                <RowDefinition Height="300"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="270"/>
+                <RowDefinition Height="330"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <Label Content="Диск:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
+                    <ComboBox Margin="10,0,0,0" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                    <Label Content="Диск:" FontSize="18" Margin="25,10,0,0" FontWeight="Bold"/>
+                    <TextBlock Height="220" Margin="25,0,10,0" Background="White"/>
+                </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Margin="0,0,0,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -49,12 +58,28 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                
+
+                <Label Content="Информация о диске:" FontSize="18" Margin="10,5,0,0" FontWeight="Bold"/>
+                <Label Content="Имя:" Grid.Row="1" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Общий размер:" Grid.Row="2" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Объём свободного места:" Grid.Row="3" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Файловая система:" Grid.Row="4" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Тип:" Grid.Row="5" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Корневая система:" Grid.Row="6" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="6" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                <Label Content="Метка диска:" Grid.Row="7" FontSize="18" Margin="10,5,0,0"/>
+                <TextBlock Grid.Row="7" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+
             </Grid>
 
         </Grid>
-        
+
     </StackPanel>
 </Window>
