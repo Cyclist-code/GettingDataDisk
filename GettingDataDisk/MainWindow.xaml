@@ -9,77 +9,111 @@
         Title="Getting Data Disk" Height="630" Width="470" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">
 
-    <StackPanel Orientation="Vertical">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/StyleButtons.xaml"/>
+                <ResourceDictionary Source="/Styles/StyleTextElements.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Border BorderBrush="Black" BorderThickness="1">
+        <StackPanel Orientation="Vertical">
 
-        <Grid Height="30" Background="#FF03172B" MouseLeftButtonDown="DragDropApp_MouseLeftButtonDown">
-            <TextBlock Text="Getting Data Disk" HorizontalAlignment="Center" FontSize="18" 
-                       Foreground="White" FontWeight="Bold" Margin="0,2,0,0"/>
-            <Button x:Name="CloseBtn" Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0" 
-                    BorderThickness="0" Background="#FF03172B" Click="CloseBtn_Click">
-                <Image Source="Assets/close.png" Height="25" Width="25"/>
-                <Button.ToolTip>
-                    <ToolTip Placement="Mouse">
-                        Закрыть
-                    </ToolTip>
-                </Button.ToolTip>
-            </Button>
-        </Grid>
-
-        <Grid Background="#D4D4D4" Height="600">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="270"/>
-                <RowDefinition Height="330"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <Label Content="Диск:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
-                    <ComboBox Margin="10,0,0,0" Width="100" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <StackPanel Grid.Column="1" Orientation="Vertical">
-                    <Label Content="Диск:" FontSize="18" Margin="25,10,0,0" FontWeight="Bold"/>
-                    <TextBlock Height="220" Margin="25,0,10,0" Background="White"/>
-                </StackPanel>
+            <Grid Height="30" Background="#FF03172B" MouseLeftButtonDown="DragDropApp_MouseLeftButtonDown">
+                <TextBlock Text="Getting Data Disk" Style="{StaticResource StyleNameAppText}"/>
+                <Button x:Name="CloseBtn" Click="CloseBtn_Click" Style="{StaticResource StyleBtnClose}">
+                    <Image Source="Assets/close.png" Height="25" Width="25"/>
+                    <Button.ToolTip>
+                        <ToolTip Placement="Mouse">
+                            Закрыть
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
             </Grid>
 
-            <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid Background="#D4D4D4" Height="600">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="270"/>
+                    <RowDefinition Height="330"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <Label Content="Диск:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
+                        <ComboBox Margin="10,0,0,0" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                        <Label Content="Содержание диска:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="10,0">
+                            <TextBlock Height="220"/>
+                        </Border>
 
-                <Label Content="Информация о диске:" FontSize="18" Margin="10,5,0,0" FontWeight="Bold"/>
-                <Label Content="Имя:" Grid.Row="1" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Общий размер:" Grid.Row="2" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Объём свободного места:" Grid.Row="3" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Файловая система:" Grid.Row="4" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="4" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Тип:" Grid.Row="5" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="5" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Корневая система:" Grid.Row="6" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="6" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
-                <Label Content="Метка диска:" Grid.Row="7" FontSize="18" Margin="10,5,0,0"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Margin="10,5,10,5" Background="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Информация о диске:" FontSize="18" Margin="10,5,0,0" FontWeight="Bold"/>
+
+                    <Label Content="Имя:" Grid.Row="1" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="1" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Общий размер:" Grid.Row="2" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="2" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Объём свободного места:" Grid.Row="3" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="3" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Файловая система:" Grid.Row="4" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="4" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Тип:" Grid.Row="5" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="5" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Корневая система:" Grid.Row="6" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="6" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                    <Label Content="Метка диска:" Grid.Row="7" FontSize="18" Margin="10,5,0,0"/>
+                    <Border Grid.Row="7" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                    </Border>
+
+                </Grid>
 
             </Grid>
 
-        </Grid>
-
-    </StackPanel>
+        </StackPanel>
+    </Border>
+    
 </Window>
