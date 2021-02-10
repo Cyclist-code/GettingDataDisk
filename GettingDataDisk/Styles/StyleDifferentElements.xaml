@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GettingDataDisk.Styles">
+
+    <!--ОФормление границы инофрмации о диске-->
+    <Style TargetType="Border" x:Key="StyleDetailInfoBorder">
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="Margin" Value="10,5,10,5"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!--Оформление границы содержания диска-->
+    <Style TargetType="Border" x:Key="StyleContentDiskBorder">
+        <Setter Property="Margin" Value="10,0"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!--Оформление подсказки при наведении на кнопку-->
+    <Style TargetType="ToolTip" x:Key="StyleBtnToolTip">
+        <Setter Property="Placement" Value="Mouse"/>
+        <Setter Property="Background" Value="#FF03172B"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+</ResourceDictionary>

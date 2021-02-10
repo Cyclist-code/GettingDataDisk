@@ -10,7 +10,26 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="0,2,0,0"/>
     </Style>
+
+    <!--Оформление закголовка выбора диск-->
+    <Style TargetType="Label" x:Key="StyleSelectionDisk">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="10,10,0,0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!--Оформление закголовка содержания диска-->
+    <Style TargetType="Label" x:Key="StyleContentDisk">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="10,10,0,0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
     
-    
+    <!--Оформление закголовка информации о диске-->
+    <Style TargetType="Label" x:Key="StyleTitleInfoDisk">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="10,5,0,0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
     
 </ResourceDictionary>

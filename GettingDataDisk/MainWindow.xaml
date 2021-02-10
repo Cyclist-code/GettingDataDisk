@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/StyleButtons.xaml"/>
+                <ResourceDictionary Source="/Styles/StyleDifferentElements.xaml"/>
                 <ResourceDictionary Source="/Styles/StyleTextElements.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -37,7 +38,7 @@
                 <Button Style="{StaticResource StyleBtnClose}">
                     <Image Source="Assets/close.png" Height="25" Width="25"/>
                     <Button.ToolTip>
-                        <ToolTip Placement="Mouse" Background="#FF03172B" Foreground="White">
+                        <ToolTip Style="{StaticResource StyleBtnToolTip}">
                             Закрыть
                         </ToolTip>
                     </Button.ToolTip>
@@ -67,12 +68,12 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
-                        <Label Content="Диск:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
+                        <Label Content="Диск:" Style="{StaticResource StyleSelectionDisk}"/>
                         <ComboBox Margin="10,0,0,0" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Vertical">
-                        <Label Content="Содержание диска:" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"/>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="10,0">
+                        <Label Content="Содержание диска:" Style="{StaticResource StyleContentDisk}"/>
+                        <Border Style="{StaticResource StyleContentDiskBorder}">
                             <TextBlock Height="220"/>
                         </Border>
 
@@ -95,40 +96,40 @@
                         <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Content="Информация о диске:" FontSize="18" Margin="10,5,0,0" FontWeight="Bold"/>
+                    <Label Content="Информация о диске:" Style="{StaticResource StyleTitleInfoDisk}"/>
 
                     <Label Content="Имя:" Grid.Row="1" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="1" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="1" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Общий размер:" Grid.Row="2" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="2" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="2" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Объём свободного места:" Grid.Row="3" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="3" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="3" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Файловая система:" Grid.Row="4" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="4" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="4" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Тип:" Grid.Row="5" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="5" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="5" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Корневая система:" Grid.Row="6" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="6" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="6" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Метка диска:" Grid.Row="7" FontSize="18" Margin="10,5,0,0"/>
-                    <Border Grid.Row="7" Grid.Column="1" Margin="10,5,10,5" BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Row="7" Style="{StaticResource StyleDetailInfoBorder}">
                         <TextBlock FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
