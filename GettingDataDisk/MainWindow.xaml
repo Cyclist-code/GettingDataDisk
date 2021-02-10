@@ -17,19 +17,42 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="MainWin" Storyboard.TargetProperty="Opacity"
+                                     From="0" To="1" Duration="0:0:0.8"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     
     <Border BorderBrush="Black" BorderThickness="1">
         <StackPanel Orientation="Vertical">
 
             <Grid Height="30" Background="#FF03172B" MouseLeftButtonDown="DragDropApp_MouseLeftButtonDown">
                 <TextBlock Text="Getting Data Disk" Style="{StaticResource StyleNameAppText}"/>
-                <Button x:Name="CloseBtn" Click="CloseBtn_Click" Style="{StaticResource StyleBtnClose}">
+                <Button Style="{StaticResource StyleBtnClose}">
                     <Image Source="Assets/close.png" Height="25" Width="25"/>
                     <Button.ToolTip>
-                        <ToolTip Placement="Mouse">
+                        <ToolTip Placement="Mouse" Background="#FF03172B" Foreground="White">
                             Закрыть
                         </ToolTip>
                     </Button.ToolTip>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="MainWin"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         From="1" To="0" Duration="0:0:0.2"
+                                                         Completed="CloseMethod"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
 

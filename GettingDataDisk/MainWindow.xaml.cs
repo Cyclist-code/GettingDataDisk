@@ -27,7 +27,7 @@ namespace GettingDataDisk
             DragMove();
         }
 
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        private void CloseMethod(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }
