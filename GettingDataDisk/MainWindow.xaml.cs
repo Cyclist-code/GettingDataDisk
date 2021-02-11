@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.IO;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GettingDataDisk
 {
@@ -45,6 +35,7 @@ namespace GettingDataDisk
         private void SelectionDisk_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DisplayContentDisk();
+            DisplayInfoDisk();
         }
 
         private void DisplayContentDisk()
@@ -67,7 +58,32 @@ namespace GettingDataDisk
             }
             catch
             {
-                MessageBox.Show("Диск не найден!", "Нет диска", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Диск не найден!", caption: "Нет диска", button: MessageBoxButton.OK, icon: MessageBoxImage.Error);
+            }
+        }
+
+        private void DisplayInfoDisk()
+        {
+            string driveLetter = SelectionDisk.SelectedItem.ToString();
+            DriveInfo driveInfo = new DriveInfo(driveLetter);
+
+            DriveType.Text = driveInfo.DriveType.ToString();
+            DriveName.Text = driveInfo.Name;
+            RootDirectory.Text = driveInfo.RootDirectory.Name;
+
+            try
+            {
+                TotalSize.Text = driveInfo.TotalSize.ToString();
+                AvailableFreeSpace.Text = driveInfo.AvailableFreeSpace.ToString();
+                DriveFormat.Text = driveInfo.DriveFormat;
+                TagDisk.Text = driveInfo.VolumeLabel;
+            }
+            catch
+            {
+                TotalSize.Text = "";
+                AvailableFreeSpace.Text = "";
+                DriveFormat.Text = "";
+                TagDisk.Text = "";
             }
         }
     }
