@@ -68,14 +68,14 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
-                        <Label Content="Диск:" Style="{StaticResource StyleSelectionDisk}"/>
-                        <ComboBox x:Name="SelectionDisk" Margin="10,0,0,0" Width="100" HorizontalAlignment="Left" 
+                        <Label Content="Диск:" Style="{StaticResource TitleSelectionDisk}"/>
+                        <ComboBox x:Name="SelectionDisk" Style="{StaticResource SelectionDiskComboBox}" 
                                   SelectionChanged="SelectionDisk_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Vertical">
-                        <Label Content="Содержание диска:" Style="{StaticResource StyleContentDisk}"/>
+                        <Label Content="Содержание диска:" Style="{StaticResource StyleTitleContentDisk}"/>
                         <Border Style="{StaticResource StyleContentDiskBorder}">
-                            <TextBlock x:Name="ContentDisk" Height="220"/>
+                            <TextBox x:Name="ContentDisk" Style="{StaticResource StyleContentDiskText}"/>
                         </Border>
 
                     </StackPanel>
