@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GettingDataDisk"
         mc:Ignorable="d"
-        x:Name="MainWin"
+        x:Name="MainWin" Loaded="MainWin_Loaded"
         Title="Getting Data Disk" Height="630" Width="470" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">
 
@@ -69,12 +69,13 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
                         <Label Content="Диск:" Style="{StaticResource StyleSelectionDisk}"/>
-                        <ComboBox Margin="10,0,0,0" Width="100" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="SelectionDisk" Margin="10,0,0,0" Width="100" HorizontalAlignment="Left" 
+                                  SelectionChanged="SelectionDisk_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Vertical">
                         <Label Content="Содержание диска:" Style="{StaticResource StyleContentDisk}"/>
                         <Border Style="{StaticResource StyleContentDiskBorder}">
-                            <TextBlock Height="220"/>
+                            <TextBlock x:Name="ContentDisk" Height="220"/>
                         </Border>
 
                     </StackPanel>
@@ -100,37 +101,37 @@
 
                     <Label Content="Имя:" Grid.Row="1" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="1" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="DriveName" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Общий размер:" Grid.Row="2" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="2" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="TotalSize" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Объём свободного места:" Grid.Row="3" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="3" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="AvailableFreeSpace" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Файловая система:" Grid.Row="4" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="4" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="DriveFormat" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Тип:" Grid.Row="5" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="5" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="DriveType" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Корневая система:" Grid.Row="6" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="6" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="RootDirectory" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                     <Label Content="Метка диска:" Grid.Row="7" FontSize="18" Margin="10,5,0,0"/>
                     <Border Grid.Row="7" Style="{StaticResource StyleDetailInfoBorder}">
-                        <TextBlock FontSize="16" Padding="5,3,0,0"/>
+                        <TextBlock x:Name="TagDisk" FontSize="16" Padding="5,3,0,0"/>
                     </Border>
 
                 </Grid>
