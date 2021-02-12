@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:GettingDataDisk.Styles">
 
     <!--Оформление названия приложения-->
-    <Style TargetType="TextBlock" x:Key="StyleNameAppText">
+    <Style TargetType="TextBlock" x:Key="NameAppText">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="White"/>
@@ -19,14 +19,14 @@
     </Style>
 
     <!--Оформление закголовка содержания диска-->
-    <Style TargetType="Label" x:Key="StyleTitleContentDisk">
+    <Style TargetType="Label" x:Key="TitleContentDisk">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Margin" Value="10,10,0,0"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
 
     <!--Оформление вывода содержания диска-->
-    <Style TargetType="TextBox" x:Key="StyleContentDiskText">
+    <Style TargetType="TextBox" x:Key="ContentDiskText">
         <Setter Property="Height" Value="220"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="IsReadOnly" Value="True"/>
@@ -36,7 +36,7 @@
     </Style>
 
     <!--Оформление закголовка информации о диске-->
-    <Style TargetType="Label" x:Key="StyleTitleInfoDisk">
+    <Style TargetType="Label" x:Key="TitleInfoDisk">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Margin" Value="10,5,0,0"/>
         <Setter Property="FontWeight" Value="Bold"/>

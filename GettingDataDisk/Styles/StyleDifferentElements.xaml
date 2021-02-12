@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:GettingDataDisk.Styles">
 
     <!--ОФормление границы инофрмации о диске-->
-    <Style TargetType="Border" x:Key="StyleDetailInfoBorder">
+    <Style TargetType="Border" x:Key="DetailInfoBorder">
         <Setter Property="Grid.Column" Value="1"/>
         <Setter Property="Margin" Value="10,5,10,5"/>
         <Setter Property="BorderBrush" Value="Black"/>
@@ -11,14 +11,14 @@
     </Style>
 
     <!--Оформление границы содержания диска-->
-    <Style TargetType="Border" x:Key="StyleContentDiskBorder">
+    <Style TargetType="Border" x:Key="ContentDiskBorder">
         <Setter Property="Margin" Value="10,0"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="1"/>
     </Style>
 
     <!--Оформление подсказки при наведении на кнопку-->
-    <Style TargetType="ToolTip" x:Key="StyleBtnToolTip">
+    <Style TargetType="ToolTip" x:Key="BtnToolTip">
         <Setter Property="Placement" Value="Mouse"/>
         <Setter Property="Background" Value="#FF03172B"/>
         <Setter Property="Foreground" Value="White"/>
